@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nyasa</title>
+<style>
+input[type=submit] {
+    background-color: #f44336;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    margin-top:30px;
+    margin-left:240px;
+}
+
+input[type=submit]:hover {
+    background-color: red;
+}
+
+a{
+	margin-left:160px;
+	margin-top:10px;
+ }
+
+a:link, a:visited {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    text-decoration:none;
+    text-align:center;
+    display:inline-block;
+}
+
+a:hover, a:active{
+    background-color: green;
+}
+
+.col1{
+	margin-top:5px;
+	width:25%;
+	float:left;
+     }
+
+.col2{
+	margin-top:5px;
+	width:75%;
+	float:left;
+     }
+
+body{
+	background-image:url("background.jpg");
+	background-size:1600px 800px;
+	background-repeat:no-repeat;
+    }
+
+.all{
+	color:white;
+	margin-left:470px;
+    }
+
+input[type=text], input[type=password], textarea {
+    	width: 40%;
+    	padding: 10px;
+    	border: 1px solid;
+    	border-radius: 4px;
+         }
+</style>
+</head>
+<body>
+<h1 style="text-align:center;margin-top:40px;color:white;">Registration</h1><br><br>
+<div class="all">
+<form action="congo.htm">
+<div class="row">
+<span class="col1"><label for="name">Name:</label></span>
+<span class="col2"><input type="text" id="naam" required></span>
+</div>
+<div class="row">
+<span class="col1"><label for="city">City:</label></span>
+<span class="col2"><input type="text" id="city" required></span>
+</div>
+<div class="row">
+<span class="col1"><label for="dob">Date of Birth:</span>
+<span class="col2"><input type="text" id="dob" pattern="[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}" title="dd/mm/yyyy" required></span>
+</div>
+<div class="row">
+<span class="col1"><label for="per">Performance:</span>
+<span class="col2"><input type="radio" name="per" value="solo" id="per" required>Solo<input type="radio" name="per" value="group" id="per" required>Group</span>
+</div>
+<div class="row">
+<span class="col1"><label for="mail">E-mail:</span>
+<span class="col2"><input type="text" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="xyz@abc.com" required></span>
+</div>
+<div class="row">
+<span class="col1"><label for="phone">Phone number:</span>
+<span class="col2"><input type="text" id="phone"  pattern="[0-9]{10}" title="Enter 10 digit numbers" required>
+</div>
+<div class="row">
+<span class="col1"><label for="pass">Password:</span>
+<span class="col2"><input type="password" id="pass" required></span>
+</div>
+<div class="row">
+<span class="col1"><label for="cpass">Confirm Password:</span>
+<span class="col2"><input type="password" id="cpass" required oninput="chkpass()"><p id="msm"></p></span>
+</div>
+<div class="row">
+<span class="col1"><label for="describe">Describe Yourself:</span>
+<span class="col2"><textarea id="describe" placeholder="OPTIONAL"></textarea></span>
+</div>
+<div class="row"><input type="submit" value="Submit"></div></form>
+<a href="instruction.htm">Instructions for the Competition</a>
+</div>
+<script>
+
+function chkpass() {
+    var x = document.getElementById("pass").value;
+    var y = document.getElementById("cpass").value;
+    if (x!=y){
+	document.getElementById("msm").innerHTML="Your password does not match!";
+}
+else{
+	document.getElementById("msm").innerHTML="";
+}
+} 
+</script>
+</body>
+</html>
